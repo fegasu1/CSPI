@@ -182,6 +182,10 @@
 <edge COLOR="#808080" STYLE="bezier" WIDTH="thin"/>
 <font BOLD="true" NAME="SansSerif" SIZE="12"/>
 </node>
+<node BACKGROUND_COLOR="#ff9900" CREATED="1725731180856" ID="ID_721841111" MODIFIED="1725731212979" STYLE="bubble" TEXT="REFACTORIZACION">
+<edge COLOR="#808080" STYLE="bezier" WIDTH="thin"/>
+<font BOLD="true" NAME="SansSerif" SIZE="12"/>
+</node>
 </node>
 <node BACKGROUND_COLOR="#cc00cc" COLOR="#ccffcc" CREATED="1725723119828" ID="ID_615504264" MODIFIED="1725726888315" POSITION="left" STYLE="bubble" TEXT="3. SCRUM">
 <font BOLD="true" NAME="SansSerif" SIZE="12"/>
