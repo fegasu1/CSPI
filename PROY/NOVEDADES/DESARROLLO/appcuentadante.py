@@ -8,7 +8,7 @@ def create_app():
     CORS(app)
     return app
 app = create_app() # CREATE THE FLASK APP
-app.ruta="http://127.0.0.1:8000"
+app.ruta="localhost:8000/"
 
 class Usuario:
     
@@ -206,4 +206,4 @@ def cierrarespuestanov():
 
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0")
+    app.run(debug=False,host="0.0.0.0",port=5000)

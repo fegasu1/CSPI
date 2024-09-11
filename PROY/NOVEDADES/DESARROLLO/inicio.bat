@@ -1,5 +1,5 @@
 start python appcuentadante.py
-cd api
-start python api.py
-cd ..
+rem cd api
+rem start python api.py
+rem cd ..
 start http://127.0.0.1:5000
