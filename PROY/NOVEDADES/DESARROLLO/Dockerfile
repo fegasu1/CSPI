@@ -1,9 +1,12 @@
-FROM python:3.7
+FROM python:3.12-slim
 
-COPY . /app
 WORKDIR /app
-RUN pip install --upgrade pip \
-&&  pip install -r requi.txt
-CMD [ "python","./appcuentadante.py" ]
+COPY requi.txt .
+RUN pip install --upgrade pip
+RUN pip install --no-cache-dir -r requi.txt
+
+COPY . .
+CMD [ "python3","app.py"]
+
 
 

@@ -4,7 +4,40 @@ from flask_cors import CORS
 import sqlite3
 import json
 import re
-from  services.adaptador import *
+# from  services.adaptador import *
+class Usuario:
+    
+    res=None
+    data=None
+    def __init__(self,bd):
+        self.bd=bd
+        
+        
+    def ConsultarJson(self,sql):
+            con = sqlite3.connect(self.bd)
+            todo=[]
+            cur = con.cursor()
+            res=cur.execute(sql)
+            nombres_columnas = [descripcion[0] for descripcion in cur.description]
+            print(nombres_columnas)
+            primer_resultado = res.fetchall()
+        
+            for i,valor in enumerate(primer_resultado):
+                aux1=valor
+                aux2= nombres_columnas
+                aux3=dict(zip(aux2,aux1))   
+                todo.append(aux3)
+            con.close() 
+            return list(todo)  
+  
+    def Inserte(self,data,clave="/i"):
+        print(self.url+clave)
+        response = requests.post(self.url+clave, json=data)
+    def Borra(self,cual,clave):
+        response = requests.delete(self.url+clave+str(cual))
+    def Actualiza(self,data,clave="/u"):
+        response = requests.put(self.url+clave, json=data)
+
 def create_app():
     app=Flask(__name__)
     CORS(app)
@@ -139,6 +172,6 @@ def CerrarNoved():
     print(sql1)
     return(sql2)
     
-  
+ 
 if __name__ == '__main__':
     app.run(debug=False,host='0.0.0.0',port=8000)

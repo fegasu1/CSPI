@@ -8,7 +8,7 @@ def create_app():
     CORS(app)
     return app
 app = create_app() # CREATE THE FLASK APP
-app.ruta="localhost:8000/"
+app.ruta="http://127.0.0.1:8000/"
 
 class Usuario:
     
@@ -163,7 +163,7 @@ def salvarespuestanov():
         }
     print(datos)
     
-    response = requests.post("http://127.0.0.1:8000/n/i", json=datos)
+    response = requests.post(app.ruta+"n/i", json=datos)
     # response = requests.post("/usua/i", json=datos)
     msg=" RESPUESTA A LA NOVEDAD GRABADA CORRECTAMENTE..."
     
