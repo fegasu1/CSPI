@@ -38,9 +38,13 @@ INSERT INTO countries (country_id, country_name, region_id) VALUES
 
 https://aka.ms/ssmsfullsetup
 
+Docker pull container-registry.oracle.com/database/free 
 
+Docker run -d --name "OracleSena" -p 1521:1521 -e "ORACLE_PWD=ora1234" container-registry.oracle.com/database/free
 
+system/ora1234
 
+SID=free
 
 
 
