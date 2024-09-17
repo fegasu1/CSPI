@@ -1,10 +1,11 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-# CENTRO DE PRODUCCION DE SOLUCIONES INTELIGENTES
+<b>CENTRO DE PRODUCCION DE SOLUCIONES INTELIGENTES</b>
 <link href="http://siomi.datasena.com/analitica/Estilo.css" rel="stylesheet" type="text/css" />
 
 <img src="https://blogger.googleusercontent.com/img/a/AVvXsEimdqxynaYJeDRuTUp3lzEWFnnQSC2KTVSxvnV70I2eZ5tOCfjwdNnExSTSm2tCf1xBFHVHwsN80OCpDCO0J80UTNWxPC86s7s5aB8rnizg7guNowqTxhr5Fd9WH48n7pn8uLZNFTgXuSGUH6BNncmfQEpOz9pAe_T0zD8n2-aGZk8-C_l6GWk-aq60fQ=s960">
 <br>
 <div class="container-md">
+INSTALACION DE SISTEMAS MANEJADORES DE BASE DE DATOS EN DOCKER 
 <table border="1" class="table table-success table-striped mp-4">
     <th>SMBD</th>
     <th>IMAGEN</th>
