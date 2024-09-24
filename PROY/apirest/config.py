@@ -1,4 +1,3 @@
-
 import requests
 configura={
     "STATIC_FOLDERS":"static",

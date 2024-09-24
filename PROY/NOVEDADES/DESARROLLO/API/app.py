@@ -5,12 +5,13 @@ import sqlite3
 import json
 import re
 # from  services.adaptador import *
+from CONFIG.config import configura
 class Usuario:
     
     res=None
     data=None
     def __init__(self,bd):
-        self.bd=bd
+        self.bd=configura['DB']
         
         
     def ConsultarJson(self,sql):
@@ -44,7 +45,7 @@ def create_app():
     return app
 
 app = create_app() # CREATE THE FLASK APP
-app.bd="nov.db"
+app.bd="API/nov.db"
 
 @app.route("/ln")
 def listar():    
@@ -174,4 +175,4 @@ def CerrarNoved():
     
  
 if __name__ == '__main__':
-    app.run(debug=False,host='0.0.0.0',port=8000)
+    app.run(debug=configura['DEBUG'],host=configura['HOST'],port=configura['PUERTOAPP'])
