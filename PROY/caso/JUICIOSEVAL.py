@@ -110,7 +110,7 @@ class rutinas:
         DM.set_index('id',inplace=True)
         return DM
 
-root = tk.Tk(background="white")
+root = tk.Tk()
 root.title("JUICIOS EVALUATIVOS SENA - CGMLTI")
 root.geometry("400x70+500+50")
 root.resizable(0,0)
@@ -165,6 +165,7 @@ def open_file_dialog():
     ENFORMACION=rutinas.Extrae(data1,"select * FROM data1 WHERE ESTADO IN('EN FORMACION')")
     APROBADOS=rutinas.Extrae(data1,"select * FROM data1 WHERE JUICIO IN('APROBADO')")
     POREVALUAR=rutinas.Extrae(data1,"select * FROM data1 WHERE JUICIO IN('POR EVALUAR') AND ESTADO IN ('EN FORMACION')")
+    POREVALUAR1=rutinas.Extrae(data1,"select COMPETENCIA,RAP,JUICIO,COUNT(*) CANT FROM data1 WHERE ESTADO IN ('EN FORMACION') GROUP BY COMPETENCIA,RAP,JUICIO")
     XEVALUARAPRENDIZ=rutinas.Extrae(data1,"select DNI,NOMBRE,APELLIDOS,COUNT(*) POREVALUAR FROM data1 WHERE JUICIO IN('POR EVALUAR')  AND ESTADO IN ('EN FORMACION') GROUP BY DNI,NOMBRE,APELLIDOS")
     KAUX="select DNI,COUNT(*) APROBADA FROM data1 WHERE JUICIO IN('APROBADO') AND ESTADO IN ('EN FORMACION') GROUP BY DNI"
     APROBADOSXAPRENDIZ=rutinas.Extrae(data1,KAUX)
@@ -177,6 +178,7 @@ def open_file_dialog():
         APROBADOSXAPRENDIZ.to_excel(writer,sheet_name="APROBADOSXAPRENDIZ", index=False)
         data1.to_excel(writer,sheet_name="FICHA", index=False) 
         POREVALUAR.to_excel(writer,sheet_name="POREVALUAR", index=False) 
+        POREVALUAR1.to_excel(writer,sheet_name="POREVALUARJUICIO", index=False) 
         ENFORMACION.to_excel(writer,sheet_name="ENFORMACION", index=False) 
         APROBADOS.to_excel(writer,sheet_name="APROBADOS", index=False) 
         DM_RAP.to_excel(writer,sheet_name="DM_RAP", index=False) 
