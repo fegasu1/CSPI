@@ -4,6 +4,7 @@ import pandas as pd
 from pandasql import sqldf
 from tkinter import *
 from shutil import rmtree
+import shutil
 
 import os
 os.system ("cls")
@@ -109,9 +110,9 @@ class rutinas:
         DM.set_index('id',inplace=True)
         return DM
 
-root = tk.Tk()
+root = tk.Tk(background="white")
 root.title("JUICIOS EVALUATIVOS SENA - CGMLTI")
-root.geometry("200x70+500+50")
+root.geometry("400x70+500+50")
 root.resizable(0,0)
 
 archi=""
@@ -200,7 +201,7 @@ def open_file_dialog():
             del XRAP['RAP']
             XRAP.drop_duplicates(inplace=True)
             XRAP.to_excel(writer,sheet_name="TRASLADADO", index=False)
-            
+    
         
         
     messagebox.showinfo(message="Proceso Terminado: ", title="Finalización del proceso")
@@ -215,7 +216,7 @@ icono_grande = tk.PhotoImage(file="sena.png")
 
 root.iconphoto(False, icono_grande, icono_chico)
 
-open_button = tk.Button(root, text="ABRIR JUICIO EVALUATIVO", command=open_file_dialog)
+open_button = tk.Button(root, text="ABRIR JUICIO EVALUATIVO", command=open_file_dialog,foreground="#ff0000",background="white",cursor="mouse")
 open_button.pack(padx=20, pady=20)
 # messagebox.showinfo(message=archi, title="Título")
  
